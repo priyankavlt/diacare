@@ -1,0 +1,65 @@
+{
+  "trained_at": "2026-11-12T15:54:58+00:00",
+  "sklearn_version": "1.9.1",
+  "n_unique_rows": 744,
+  "n_train": 595,
+  "n_test": 149,
+  "selected_model": "SVM",
+  "best_params": {
+    "model__estimator__C": 1,
+    "model__estimator__gamma": 0.1
+  },
+  "cv_leaderboard": [
+    {
+      "model": "SVM",
+      "cv_roc_auc": 0.8364206663975111,
+      "best_params": {
+        "model__estimator__C": 1,
+        "model__estimator__gamma": 0.1
+      }
+    },
+    {
+      "model": "LogisticRegression",
+      "cv_roc_auc": 0.8312141290838421,
+      "best_params": {
+        "model__C": 0.01
+      }
+    },
+    {
+      "model": "RandomForest",
+      "cv_roc_auc": 0.8239175988157156,
+      "best_params": {
+        "model__max_depth": 4,
+        "model__min_samples_leaf": 3,
+        "model__n_estimators": 300
+      }
+    },
+    {
+      "model": "GradientBoosting",
+      "cv_roc_auc": 0.8197437678612424,
+      "best_params": {
+        "model__learning_rate": 0.03,
+        "model__max_depth": 2,
+        "model__n_estimators": 200
+      }
+    }
+  ],
+  "test_metrics": {
+    "threshold": 0.27619415802874453,
+    "accuracy": 0.7181208053691275,
+    "precision": 0.5633802816901409,
+    "recall": 0.7843137254901961,
+    "f1": 0.6557377049180327,
+    "roc_auc": 0.8183273309323729,
+    "confusion_matrix": [
+      [
+        67,
+        31
+      ],
+      [
+        11,
+        40
+      ]
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiaCare – Diabetes Predictor</title>
+  <style>
+    body { margin: 0; min-height: 100vh; font-family: "Open Sans", Arial, sans-serif; color: #fff; text-align: center;
+           background: #111 url("{{ url_for('static', filename='wall.jpg') }}") center / cover fixed; }
+    h1 { font-size: 40px; text-transform: uppercase; text-shadow: 2px 2px 4px #000; margin: 32px 0 8px; }
+    form { display: inline-flex; flex-direction: column; gap: 10px; width: min(500px, 92vw); margin-bottom: 40px; }
+    label { text-align: left; font-size: 14px; text-shadow: 1px 1px 2px #000; }
+    input { width: 100%; box-sizing: border-box; padding: 14px; font-size: 15px; color: #fff; background: rgba(0,0,0,.7);
+            border: 3px solid greenyellow; border-radius: 20px; outline: none; margin-top: 4px; }
+    input:focus { border-color: #6eb6de; }
+    button { padding: 12px; font-size: 16px; color: #fff; border: 1px solid #3762bc; border-radius: 6px; cursor: pointer;
+             background: linear-gradient(#6eb6de, #4a77d4); }
+    .error { background: rgba(160,20,20,.85); padding: 10px; border-radius: 8px; }
+    footer { font-size: 12px; padding-bottom: 20px; text-shadow: 1px 1px 2px #000; }
+  </style>
+</head>
+<body>
+  <h1>Diabetes Predictor</h1>
+  <form action="{{ url_for('predict_route') }}" method="post">
+    {% if error %}<div class="error">{{ error }}</div>{% endif %}
+    {% for name, _, label, hint, lo, hi, step in fields %}
+      <label>{{ label }}
+        <input type="number" name="{{ name }}" min="{{ lo }}" max="{{ hi }}" step="{{ step }}"
+               placeholder="{{ hint }}" value="{{ values.get(name, '') }}" required>
+      </label>
+    {% endfor %}
+    <button type="submit">Predict</button>
+  </form>
+  <footer>Educational demo only – not a medical diagnosis. Based on the original project by Sarvesh Kumar Sharma.</footer>
+</body>
+</html>
