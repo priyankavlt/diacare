@@ -62,3 +62,7 @@ model/                       trained pipeline + metrics
 app/                         Flask app, templates, static images
 tests/                       pytest
 ```
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
