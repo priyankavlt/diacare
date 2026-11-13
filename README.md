@@ -66,3 +66,17 @@ tests/                       pytest
 ## License
 
 Licensed under the [Apache License 2.0](LICENSE).
+
+### Third-party material
+
+The Apache license covers the original work in this repository. These parts come from other sources,
+remain under their authors' terms, and are **not** covered by the Apache license:
+
+- `data/kaggle_diabetes.csv` – Kaggle version of the Pima Indians Diabetes Database
+  (originally from the National Institute of Diabetes and Digestive and Kidney Diseases),
+  as included in [shsarv/Machine-Learning-Projects](https://github.com/shsarv/Machine-Learning-Projects)
+- `app/static/` images (`diabetes.webp`, `no-diabetes.webp`, `wall.jpg`, `wallpaper.jpg`) –
+  from [shsarv/Machine-Learning-Projects](https://github.com/shsarv/Machine-Learning-Projects)
+  by Sarvesh Kumar Sharma
+
+The web app's layout and the overall approach are adapted from that same project.
